@@ -21,8 +21,9 @@ ADD viterbi_generator/ /gnuradio/airprobe/viterbi_generator/
 
 RUN cd airprobe && wget https://raw.githubusercontent.com/scateu/airprobe-3.7-hackrf-patch/master/zmiana.patch 
 RUN cd airprobe && patch -p1 < zmiana.patch
-
 RUN cd airprobe/gsmdecode && ./bootstrap && ./configure && make
-# RUN cd airprobe/gsm-receiver && ./bootstrap && ./configure && make
+
+RUN cd airprobe/gsm-receiver && patch -p1 < libosmocore_from_git.patch
+RUN cd airprobe/gsm-receiver && ./bootstrap && ./configure && make
 
 ENTRYPOINT      ["/bin/bash"]
