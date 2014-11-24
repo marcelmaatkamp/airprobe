@@ -1,0 +1,19 @@
+*** gsm-receiver/configure.ac	Mon Nov 24 19:46:13 2014
+--- gsm-receiver.new/configure.ac	Mon Nov 24 19:47:00 2014
+***************
+*** 27,33 ****
+  GR_STANDALONE
+
+  dnl Check for libosmocore (gsmtap support)
+! PKG_CHECK_MODULES(LIBOSMOCORE, libosmocore >= 0.3.1)
+
+  AC_CONFIG_FILES([\
+  	  Makefile \
+--- 27,33 ----
+  GR_STANDALONE
+
+  dnl Check for libosmocore (gsmtap support)
+! PKG_CHECK_MODULES(LIBOSMOCORE, libosmocore >= UNKNOWN)
+
+  AC_CONFIG_FILES([\
+  	  Makefile \
