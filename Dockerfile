@@ -19,7 +19,7 @@ ADD gssm/ /gnuradio/airprobe/gssm/
 ADD viterbi-detector/ /gnuradio/airprobe/viterbi-detector/
 ADD viterbi_generator/ /gnuradio/airprobe/viterbi_generator/
 
-RUN wget -o /gnuradio/airprobe/zmiana.patch https://raw.githubusercontent.com/scateu/airprobe-3.7-hackrf-patch/master/zmiana.patch 
+RUN cd airprobe && wget https://raw.githubusercontent.com/scateu/airprobe-3.7-hackrf-patch/master/zmiana.patch 
 RUN cd airprobe && patch -p1 < zmiana.patch
 
 RUN cd airprobe/gsmdecode && ./bootstrap && ./configure && make
